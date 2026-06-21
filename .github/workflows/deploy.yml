@@ -7,18 +7,14 @@ on:
       - dev
 
 env:
-  MONGODB_CLUSTER_ADDRESS:
-  MONGODB_USERNAME:
-  MONGODB_PASSWORD:
   MONGODB_DB_NAME: gha-demo
-  PORT:
 
 jobs:
   test:
     env:
       MONGODB_CLUSTER_ADDRESS: cbcluster.eods84z.mongodb.net
-      MONGODB_USERNAME: cbarrios_db_user
-      MONGODB_PASSWORD: 59k84TAT9pgBfbuk
+      MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
+      MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
       PORT: 8000
     environment: testing
     runs-on: ubuntu-latest
