@@ -8,6 +8,7 @@ on:
   workflow_dispatch:
 
 env:
+  MONGODB_USERNAME: gha-user
   MONGODB_DB_NAME: gha-demo
 
 jobs:
